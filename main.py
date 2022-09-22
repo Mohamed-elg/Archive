@@ -1,6 +1,7 @@
 #!/bin/python3
 
 import urllib.request
+import zipfile
 
 
 # Récupération de l'archive zip
@@ -9,3 +10,5 @@ url = 'http://192.168.23.226/test_export.sql.zip'
 urllib.request.urlretrieve(url, 'test_export.zip')
 
 # Décompression de l'archive
+# Pas d'argument pour extractall --> dans le répertoire courant
+zipfile.ZipFile('test_export.zip', 'r').extractall()
