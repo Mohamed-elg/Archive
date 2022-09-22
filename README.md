@@ -1,6 +1,6 @@
 # Mini-Projet : utilitaire d'archive
 
-## Démarche & choix retenus
+## Démarche & choix retenus
 
 - Machine virtuel : Linux Debian 11 (bullseye)
 - Language : Python3 et Bash
