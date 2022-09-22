@@ -25,7 +25,9 @@ v = ['voiture','maison']
 
 print(v.index('voiture'))
  
-def modification(result):
+def modification(a,b):
+    d = Differ() 
+    result = list(d.compare(open(a, 'r').readlines(), open(b, 'r').readlines()))
     for line in result:
         if ('+' in line):
             print("find a modification")
@@ -33,6 +35,6 @@ def modification(result):
     print("no modification found")
     return(False)
 
-modification(result)
+modification('test100.sql','test100-copy.sql')
 
 
