@@ -1,7 +1,9 @@
 # Mini-Projet utilitaire d'archive
 
-## Docs :
+## liens utiles :
 
-## Module :
+    CRON : https://crontab.guru/ pour les automatisations
+
+## Module prérequis:
 
     pip install pysftp
