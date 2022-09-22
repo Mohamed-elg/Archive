@@ -1,12 +1,12 @@
 {
-  "ip_machine": "172.20.10.2",
-  "url_fichier": "http://172.20.10.2/test_export.sql.zip",
-  "date_expiration": "09/05/2001",
+  "ip_machine": "192.168.1.23",
+  "url_fichier": "http://192.168.1.23/test_export.sql.zip",
+  "date_expiration": "09/05/2077",
   "periode": "* * * * *",
   "Envoi_mail": true,
   "logs_mail": true,
   "destinataires_mail": [
     "m.elguermat@inspire-telecom.com",
-    "bouasriaayoub@gmail.com"
+    "mohamed.elguermat9@gmail.com"
   ]
 }

@@ -1,9 +1,16 @@
 import pysftp
+import json
 
 # Connexion et partage de fichier via le serveur SFTP
 #! L'adresse IP,les logs et les chemins sont susceptibles de changer
 
-ip = '172.20.10.2'
+with open('configuration.json', 'r') as js:
+    key = json.load(js)
+
+ip = key["ip_machine"]
+
+js.close()
+
 user = 'mohamed'
 mdp = '0905'
 
@@ -26,3 +33,6 @@ def get_file(ip, user, mdp, file):
         print('Reception réussie')
     except:
         print('Echec de la réception')
+
+
+#send_file(ip, user, mdp, 'README.md')

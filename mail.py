@@ -9,24 +9,27 @@ import ssl
 with open('mail.json', 'r') as js:
     key = json.load(js)
 
-email = str(key["email"])
-password = str(key["password"])
+email = key["email"]
+password = key["password"]
 
 js.close()
 
+# ouverture du fichier de configuration
 with open('configuration.json', 'r') as js:
     key = json.load(js)
 
 destinataires = key["destinataires_mail"]
+print(",".join(destinataires))
 
 js.close()
 
 mail = EmailMessage()
 mail['From'] = email
-mail['To'] = ",".join(destinataires)
+mail['To'] = destinataires
 mail['Subject'] = 'Envoi réussi'
-body = 'Hello world'
+body = 'Hello world !'
 mail.set_content(body)
+print(mail.as_string())
 
 
 def mail_send(email, password, mail):
