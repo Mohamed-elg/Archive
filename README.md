@@ -10,6 +10,7 @@ CRON : https://crontab.guru/ pour les automatisations
 
 ## Tâches restantes
 
-    Fichier de log
-    Fichier CRON
-    Documentation
+- Fichier de log
+- Fichier CRON
+- Correctifs
+- Documentation
