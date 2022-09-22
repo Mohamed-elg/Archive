@@ -4,5 +4,9 @@
   "date_expiration": "09/05/2001",
   "periode": "* * * * *",
   "Envoi_mail": true,
-  "logs_mail": true
+  "logs_mail": true,
+  "destinataires_mail": [
+    "m.elguermat@inspire-telecom.com",
+    "bouasriaayoub@gmail.com"
+  ]
 }
