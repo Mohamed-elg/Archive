@@ -7,3 +7,9 @@
 ## Module prérequis:
 
     pip install pysftp
+
+## Tâches restantes
+
+    Fichier de log
+    Fichier CRON
+    Documentation
