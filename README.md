@@ -4,7 +4,9 @@
 
 CRON : https://crontab.guru/ pour les automatisations
 
-## Module prérequis:
+## Modules prérequis:
+
+*commandes pip pour les installer*
 
     pip install pysftp
 
