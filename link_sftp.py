@@ -2,7 +2,7 @@ import pysftp
 import json
 
 # Connexion et partage de fichier via le serveur SFTP
-#! L'adresse IP,les logs et les chemins sont susceptibles de changer
+#!les logs et les chemins sont susceptibles de changer
 
 with open('configuration.json', 'r') as js:
     key = json.load(js)

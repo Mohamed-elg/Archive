@@ -27,6 +27,7 @@ rm.close()
 
 
 def mail_format(destinataires, objet, log):
+    """Permet de mettre en forme le mail"""
     mail = EmailMessage()
     mail['From'] = email
     mail['To'] = destinataires
@@ -40,6 +41,7 @@ def mail_format(destinataires, objet, log):
 
 
 def mail_send(email, password):
+    """Permet d'envoyer le mail"""
     mail = mail_format(destinataires, objet, log)
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
