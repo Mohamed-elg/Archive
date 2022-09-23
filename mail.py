@@ -27,7 +27,7 @@ mail = EmailMessage()
 mail['From'] = email
 mail['To'] = destinataires
 mail['Subject'] = objet
-mail.attach(js)
+# mail.attach(js)
 body = 'Hello world !'
 mail.set_content(body)
 print(mail.as_string())
