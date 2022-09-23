@@ -5,6 +5,7 @@
   "periode": "* * * * *",
   "Envoi_mail": true,
   "logs_mail": true,
+  "Objet_mail": "Envoi réussi",
   "destinataires_mail": [
     "m.elguermat@inspire-telecom.com",
     "mohamed.elguermat9@gmail.com"

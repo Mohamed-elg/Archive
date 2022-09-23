@@ -19,17 +19,20 @@ with open('configuration.json', 'r') as js:
     key = json.load(js)
 
 destinataires = key["destinataires_mail"]
-print(",".join(destinataires))
+objet = key["Objet_mail"]
 
-js.close()
+# js.close()
 
 mail = EmailMessage()
 mail['From'] = email
 mail['To'] = destinataires
-mail['Subject'] = 'Envoi réussi'
+mail['Subject'] = objet
+mail.attach(js)
 body = 'Hello world !'
 mail.set_content(body)
 print(mail.as_string())
+
+#! L'envoi à plusieurs destinataires ne marche pas
 
 
 def mail_send(email, password, mail):
@@ -37,6 +40,7 @@ def mail_send(email, password, mail):
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
         smtp.login(email, password)
         smtp.sendmail(mail['From'], mail['To'], mail.as_string())
+        smtp.close()
     return
 
 
