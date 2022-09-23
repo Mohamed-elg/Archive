@@ -19,7 +19,6 @@
 - Fichier de log
 - Commande CRON
 - Correctifs
-- PJ pour les mails
 - Documentation utilisateur d'installation
 - Mémoire technique
 

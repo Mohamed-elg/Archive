@@ -21,15 +21,19 @@ with open('configuration.json', 'r') as js:
 destinataires = key["destinataires_mail"]
 objet = key["Objet_mail"]
 
-# js.close()
+js.close()
+# TODO : Mettre le bon chemin pour les logs
+with open("README.md", 'rb') as rm:
+    readme = rm.read()
 
 mail = EmailMessage()
 mail['From'] = email
 mail['To'] = destinataires
 mail['Subject'] = objet
-# mail.attach(js)
-body = 'Hello world !'
+body = 'Bonjour,\nVous trouverez en pièce jointe, le rapport des logs.\n\nCeci est un message automatique.'
 mail.set_content(body)
+# Format pdf obligatoirement
+mail.add_attachment(readme, 'application', 'pdf', filename='Rapport')
 print(mail.as_string())
 
 #! L'envoi à plusieurs destinataires ne marche pas
