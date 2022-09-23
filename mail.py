@@ -7,39 +7,40 @@ import ssl
 
 # Ouverture du JSON & importation des clés
 with open('mail.json', 'r') as js:
-    key = json.load(js)
-
-email = key["email"]
-password = key["password"]
-
+    id = json.load(js)
+email = id["email"]
+password = id["password"]
 js.close()
 
 # ouverture du fichier de configuration
 with open('configuration.json', 'r') as js:
-    key = json.load(js)
-
-destinataires = key["destinataires_mail"]
-objet = key["Objet_mail"]
-
+    config = json.load(js)
+destinataires = config["destinataires_mail"]
+objet = config["Objet_mail"]
+log = config["logs_mail"]
 js.close()
+
 # TODO : Mettre le bon chemin pour les logs
 with open("README.md", 'rb') as rm:
     readme = rm.read()
-
-mail = EmailMessage()
-mail['From'] = email
-mail['To'] = destinataires
-mail['Subject'] = objet
-body = 'Bonjour,\nVous trouverez en pièce jointe, le rapport des logs.\n\nCeci est un message automatique.'
-mail.set_content(body)
-# Format pdf obligatoirement
-mail.add_attachment(readme, 'application', 'pdf', filename='Rapport')
-print(mail.as_string())
-
-#! L'envoi à plusieurs destinataires ne marche pas
+rm.close()
 
 
-def mail_send(email, password, mail):
+def mail_format(destinataires, objet, log):
+    mail = EmailMessage()
+    mail['From'] = email
+    mail['To'] = destinataires
+    mail['Subject'] = objet
+    if log:
+        body = 'Bonjour,\nVous trouverez en pièce jointe, le rapport des logs.\n\nCeci est un message automatique.'
+        mail.set_content(body)
+        # Format pdf obligatoirement
+        mail.add_attachment(readme, 'application', 'pdf', filename='Rapport')
+    return mail
+
+
+def mail_send(email, password):
+    mail = mail_format(destinataires, objet, log)
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
         smtp.login(email, password)
@@ -47,5 +48,5 @@ def mail_send(email, password, mail):
         smtp.close()
     return
 
-
-mail_send(email, password, mail)
+#! L'envoi à plusieurs destinataires ne marche pas
+#mail_send(email, password)
