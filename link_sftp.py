@@ -5,14 +5,13 @@ import json
 #!les logs et les chemins sont susceptibles de changer
 
 with open('configuration.json', 'r') as js:
-    key = json.load(js)
+    config = json.load(js)
 
-ip = key["ip_machine"]
+ip = config["ip_machine"]
+user = config["user_sftp"]
+mdp = config["mdp_sftp"]
 
 js.close()
-
-user = 'mohamed'
-mdp = '0905'
 
 
 def send_file(ip, user, mdp, file):
@@ -33,6 +32,16 @@ def get_file(ip, user, mdp, file):
         print('Reception réussie')
     except:
         print('Echec de la réception')
+
+
+def rm_file(ip, user, mdp, file):
+    """File --> nom du fichier + extension"""
+    try:
+        pysftp.Connection(ip, username=user, password=mdp, port=22).remove(
+            f'/home/mohamed/Bureau/SFTP/{file}', file)
+        print('Suppression réussie')
+    except:
+        print('Echec de la suppression')
 
 
 #send_file(ip, user, mdp, 'README.md')

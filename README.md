@@ -16,6 +16,7 @@
 - Passer le serveur web en httpS
 - Renommer les archives en AAAA-MM-JJ
 - Historisation (avoir plusieurs version d'un même fichier)
+- Compression en .zip
 - Fichier de log
 - Commande CRON
 - Correctifs
@@ -27,6 +28,7 @@
 _commandes pip pour les installer_
 
     pip install pysftp
+    apt install at
 
 ## liens utiles :
 
