@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import pysftp
 import json
 
@@ -33,7 +35,7 @@ def get_file(ip, user, mdp, file):
     except:
         print('Echec de la réception')
 
-
+#todo : tester
 def rm_file(ip, user, mdp, file):
     """File --> nom du fichier + extension"""
     try:

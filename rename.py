@@ -7,6 +7,6 @@ from datetime import datetime
 
 
 def rename(file, extension):
-    stat = os.stat(nom)
+    stat = os.stat(file)
     creation_date = str(datetime.fromtimestamp(stat.st_mtime))[0:10]
-    os.rename(nom, creation_date+extension)
+    os.rename(file, creation_date+extension)
