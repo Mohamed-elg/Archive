@@ -35,7 +35,9 @@ def get_file(ip, user, mdp, file):
     except:
         print('Echec de la réception')
 
-#todo : tester
+#TODO : tester
+
+
 def rm_file(ip, user, mdp, file):
     """File --> nom du fichier + extension"""
     try:

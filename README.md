@@ -10,6 +10,8 @@
 - Méthode email : SMTPS avec gmail
 - Fichier de configuration : format json (pour la lisibilité)
 
+![alt text](neofetch.png)
+
 ## Tâches restantes
 
 - Mettre en place le programme d'expiration
@@ -28,7 +30,7 @@
 _commandes pip pour les installer_
 
     pip install pysftp
-    apt install at
+    sudo apt install at
 
 ## liens utiles :
 

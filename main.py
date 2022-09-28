@@ -8,5 +8,5 @@ import sftp
 # Programme principal à exécuter périodiquement
 
 # 1- Téléchargement et contrôle du .zip
-# 2- Renommer le fichier avec le bon format
+# 2- Renommer le fichier avec le bon format & recompresser
 # 3- Envoi d'un mail avec/sans rapport
