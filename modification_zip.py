@@ -1,9 +1,10 @@
 #!/bin/python3
 
 from unittest import result
-
 # import pour la comparaison de fichier sql
 from difflib import Differ
+#Modification de fichier zip
+from zipfile import ZipFile
 
 def modification(a,b):
     """"Les arguments sont les chemins des fichiers Fonction qui vérifie les modifications entre les fichiers sql, un fichier est créée avec toute les modifications : result et les modifs contiennent des (+/-), et on cherche dans ce fichier la présence de +. """
@@ -16,18 +17,17 @@ def modification(a,b):
     print("no modification found")
     return (False)
 
-#modification('test100.sql','test100-copy.sql')
-
-from zipfile import ZipFile
 
 def zip_(file):
     file_name = file.split('.') #on découpe le nom et l'extension
 
     with ZipFile(file_name[0] + '.zip', 'w') as myzip:
         myzip.write(file) # on écrit le fichier de départ dans l'archive  
+    return
 
 
-    return(file)
+def decompress(a):
+    with ZipFile(a, 'r') as myzip:
+        myzip.extractall() # il est enregistré dans un dossier du nom de a sans l'extension
 
-
-#zip_('name_file.txt')
+    return 
