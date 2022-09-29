@@ -6,6 +6,8 @@ from difflib import Differ
 #Modification de fichier zip
 from zipfile import ZipFile
 
+import os
+
 def modification(a,b):
     """"Les arguments sont les chemins des fichiers Fonction qui vérifie les modifications entre les fichiers sql, un fichier est créée avec toute les modifications : result et les modifs contiennent des (+/-), et on cherche dans ce fichier la présence de +. """
     d = Differ() 
@@ -31,3 +33,17 @@ def decompress(a):
         myzip.extractall() # il est enregistré dans un dossier du nom de a sans l'extension
 
     return 
+
+
+def compress_to_tar(a):
+    file_name = a.split('.')
+    os.system("tar -cvzf " + file_name[0] + ".tgz .")
+    return
+
+# A revérifier, il permet la décompression du fichier
+# def decompress_tar(a):
+#     os.system("tar -xvzf " + a)
+#     return
+
+
+# decompress_tar("testa.tgz")
