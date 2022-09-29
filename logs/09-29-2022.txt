@@ -1,0 +1,32 @@
+
+11:56:18  Ouverture du fichier de configuration du mail
+11:56:18  Fermeture du fichier de configuration du mail
+11:56:18  Ouverture du fichier de configuration
+11:56:18  Fermeture du fichier de configuration
+11:56:18  Connexion au serveur SMTP de google
+12:03:06  Ouverture du fichier de configuration
+12:05:49  Ouverture du fichier de configuration
+12:06:04  Ouverture du fichier de configuration
+12:06:04  Fermeture du fichier de configuration du mail
+12:06:04  Fermeture du fichier de configuration
+12:06:04  Connexion au serveur SMTP de google
+12:18:02  Ouverture du fichier de configuration
+12:18:02  Fermeture du fichier de configuration du mail
+12:18:02  Fermeture du fichier de configuration
+12:18:02  Connexion au serveur SMTP de google
+12:18:56  Ouverture du fichier de configuration
+12:18:56  Fermeture du fichier de configuration du mail
+12:18:56  Fermeture du fichier de configuration
+12:18:56  Connexion au serveur SMTP de google
+12:19:06  Ouverture du fichier de configuration
+12:19:06  Fermeture du fichier de configuration du mail
+12:19:06  Fermeture du fichier de configuration
+12:19:06  Connexion au serveur SMTP de google
+12:19:15  Ouverture du fichier de configuration
+12:19:15  Fermeture du fichier de configuration du mail
+12:19:15  Fermeture du fichier de configuration
+12:19:15  Connexion au serveur SMTP de google
+12:20:32  Ouverture du fichier de configuration
+12:20:32  Fermeture du fichier de configuration du mail
+12:20:32  Fermeture du fichier de configuration
+12:20:32  Connexion au serveur SMTP de google
