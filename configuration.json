@@ -4,7 +4,7 @@
   "user_sftp": "mohamed",
   "mdp_sftp": "0905",
   "date_expiration": "09/05/2077",
-  "periode": "* * * * *",
+  "periode": "daily",
   "Envoi_mail": true,
   "logs_mail": true,
   "Objet_mail": "Envoi réussi",
