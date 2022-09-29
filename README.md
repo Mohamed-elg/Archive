@@ -27,7 +27,6 @@
 _commandes pip pour les installer_
 
     pip install pysftp
-    pip install yagmail
     sudo apt install at
 
 - Des adresses IP statiques

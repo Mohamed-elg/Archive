@@ -1,1 +1,26 @@
 hello world
+15:04:52  Ouverture du fichier de configuration
+15:04:52  Fermeture du fichier de configuration du mail
+15:04:52  Fermeture du fichier de configuration
+15:04:52  Connexion au serveur SMTP de google
+15:05:28  Ouverture du fichier de configuration
+15:05:28  Fermeture du fichier de configuration du mail
+15:05:28  Fermeture du fichier de configuration
+15:05:28  Connexion au serveur SMTP de google
+15:05:44  Ouverture du fichier de configuration
+15:05:44  Fermeture du fichier de configuration du mail
+15:05:44  Fermeture du fichier de configuration
+15:05:44  Connexion au serveur SMTP de google
+15:05:49  Ouverture du fichier de configuration
+15:05:49  Fermeture du fichier de configuration du mail
+15:05:49  Fermeture du fichier de configuration
+15:05:49  Connexion au serveur SMTP de google
+15:06:28  Ouverture du fichier de configuration
+15:06:28  Fermeture du fichier de configuration du mail
+15:06:28  Fermeture du fichier de configuration
+15:06:28  Connexion au serveur SMTP de google
+15:07:12  Ouverture du fichier de configuration
+15:07:12  Fermeture du fichier de configuration du mail
+15:07:12  Fermeture du fichier de configuration
+15:07:12  Connexion au serveur SMTP de google
+15:07:12  Envoi du mail
