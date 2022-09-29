@@ -14,14 +14,11 @@
 
 ## Tâches restantes
 
-- Mettre en place le programme d'expiration
-- Passer le serveur web en httpS
-- Renommer les archives en AAAA-MM-JJ
-- Historisation (avoir plusieurs version d'un même fichier)
 - Compression en .zip
 - Fichier de log
 - Commande CRON
 - Correctifs
+- Faire les tests
 - Documentation utilisateur d'installation
 - Mémoire technique
 
