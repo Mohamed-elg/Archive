@@ -30,4 +30,4 @@ def zip_(file):
     return(file)
 
 
-zip_('test100.sql')
+#zip_('name_file.txt')
