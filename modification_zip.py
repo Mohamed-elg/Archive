@@ -16,4 +16,18 @@ def modification(a,b):
     print("no modification found")
     return (False)
 
-modification('test100.sql','test100-copy.sql')
+#modification('test100.sql','test100-copy.sql')
+
+from zipfile import ZipFile
+
+def zip_(file):
+    file_name = file.split('.') #on découpe le nom et l'extension
+
+    with ZipFile(file_name[0] + '.zip', 'w') as myzip:
+        myzip.write(file) # on écrit le fichier de départ dans l'archive  
+
+
+    return(file)
+
+
+zip_('test100.sql')
