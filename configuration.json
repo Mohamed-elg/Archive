@@ -5,13 +5,19 @@
   "mdp_sftp": "0905",
   "date_expiration": "09/05/2077",
   "periode": "daily",
-  "Envoi_mail": true,
-  "logs_mail": true,
-  "Objet_mail": "Envoi réussi",
-  "destinataires_mail": [
-    "m.elguermat@inspire-telecom.com",
-    "mohamed.elguermat9@gmail.com"
-  ],
+  "mail": {
+    "email": "mohamed.elguermat9@gmail.com",
+    "key": "qmjoqicyshjxzpfm",
+    "serveur_smtp": "smtp.gmail.com",
+    "port_smtp": "465",
+    "Envoi_mail": true,
+    "logs_mail": true,
+    "Objet_mail": "Envoi réussi",
+    "destinataires_mail": [
+      "m.elguermat@inspire-telecom.com",
+      "mohamed.elguermat9@gmail.com"
+    ]
+  },
   "historisation": true,
   "perdiode_suppression": "7"
 }
