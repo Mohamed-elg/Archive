@@ -19,7 +19,12 @@ js.close()
 
 def enregistrement(file, ip, user, mdp):
     if historisation_b:
-        rename.rename(file, ".zip")
-        link_sftp.send_file(ip, user, mdp, file)
-        os.system(f"at now +{periode} -f suppression_sftp.py {file}")
+        creation_date = rename.rename(file, ".zip")
+        link_sftp.send_file(ip, user, mdp, creation_date)
+        os.system(
+            f"echo 'python3 suppression_sftp.py {creation_date}' | at now +{periode} days")
+        os.system(f'rm {creation_date}')
     return
+
+
+enregistrement('test.zip', ip, user, mdp)

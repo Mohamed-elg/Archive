@@ -18,16 +18,19 @@
 - Fichier de log
 - Commande CRON
 - Correctifs
-- Faire les tests
+- Conversion d'un fichier en pdf
 - Documentation utilisateur d'installation
 - Mémoire technique
 
-## Modules prérequis:
+## Prérequis:
 
 _commandes pip pour les installer_
 
     pip install pysftp
     sudo apt install at
+
+- Des adresses IP statique
+- Il faut se connecter manuellement en SFTP la première fois avec la machine
 
 ## liens utiles :
 

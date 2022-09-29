@@ -35,17 +35,16 @@ def get_file(ip, user, mdp, file):
     except:
         print('Echec de la réception')
 
-#TODO : tester
-
 
 def rm_file(ip, user, mdp, file):
     """File --> nom du fichier + extension"""
     try:
         pysftp.Connection(ip, username=user, password=mdp, port=22).remove(
-            f'/home/mohamed/Bureau/SFTP/{file}', file)
+            f'/home/mohamed/Bureau/SFTP/{file}')
         print('Suppression réussie')
     except:
         print('Echec de la suppression')
 
 
 #send_file(ip, user, mdp, 'README.md')
+#rm_file(ip, user, mdp, 'README.md')

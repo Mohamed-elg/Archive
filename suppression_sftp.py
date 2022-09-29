@@ -1,6 +1,8 @@
-#!/bin/pyhton3
+#!/bin/python3
 
-import link_sftp, json, sys
+import link_sftp
+import json
+import sys
 
 with open('configuration.json', 'r') as js:
     config = json.load(js)
@@ -9,4 +11,4 @@ with open('configuration.json', 'r') as js:
     mdp = config["mdp_sftp"]
 js.close()
 
-link_sftp.rm_file(ip,user, mdp, sys.argv[1])
+link_sftp.rm_file(ip, user, mdp, sys.argv[1])

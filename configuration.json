@@ -1,6 +1,6 @@
 {
-  "ip_machine": "192.168.1.23",
-  "url_fichier": "http://192.168.1.23/test_export.sql.zip",
+  "ip_machine": "161.3.60.133",
+  "url_fichier": "http://161.3.60.133/test_export.sql.zip",
   "user_sftp": "mohamed",
   "mdp_sftp": "0905",
   "date_expiration": "09/05/2077",
