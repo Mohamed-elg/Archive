@@ -29,7 +29,7 @@ _commandes pip pour les installer_
     pip install pysftp
     sudo apt install at
 
-- Des adresses IP statique
+- Des adresses IP statiques
 - Il faut se connecter manuellement en SFTP la première fois avec la machine
 
 ## liens utiles :
