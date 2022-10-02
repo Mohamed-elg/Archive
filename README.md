@@ -1,5 +1,9 @@
 # Mini-Projet : utilitaire d'archive
 
+## **Guide d'installation & d'utilisation**
+
+<br>
+
 ## Démarche & choix retenus
 
 - Machine virtuel : Linux Debian 11 (bullseye)
@@ -12,17 +16,16 @@
 
 ![alt text](neofetch.png)
 
-## Tâches restantes
+## Tâches restantes :
 
 - Compression en .zip
 - Fichier de log
 - Commande CRON
 - Correctifs
-- Conversion d'un fichier en pdf
 - Documentation utilisateur d'installation
 - Mémoire technique
 
-## Prérequis:
+## Prérequis :
 
 _commandes pip pour les installer_
 

@@ -12,9 +12,10 @@
     "port_smtp": "465",
     "Envoi_mail": true,
     "logs_mail": true,
-    "Objet_mail": "Envoi réussi",
+    "Objet_mail_reussi": "Archivage réussi",
+    "Objet_mail_echec": "Echec de l'archivage",
     "destinataires_mail": [
-      "m.benhammouda@inspire-telecom.com",
+      "m.elguermat@inspire-telecom.com",
       "mohamed.elguermat9@gmail.com"
     ]
   },
