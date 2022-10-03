@@ -1,4 +1,4 @@
-# Mini-Projet : utilitaire d'archive
+# **Mini-Projet : utilitaire d'archive**
 
 ## **Guide d'installation & d'utilisation**
 
@@ -10,9 +10,11 @@
 - Language : Python3 et Bash
 - Serveur web : Apache
 - Méthode de transfert : SFTP ave openSSH
-- Automatisation : Cron
+- Automatisation : Crontab
 - Méthode email : SMTPS avec gmail
 - Fichier de configuration : format json (pour la lisibilité)
+
+<br>
 
 ![alt text](neofetch.png)
 
@@ -32,7 +34,7 @@
 
 ## Crontab :
 
-**Arguments possibles pour le champs _période_ crontab**
+Arguments possibles pour le champs _période_ crontab
 
 - reboot
 - yearly
