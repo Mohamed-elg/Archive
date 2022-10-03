@@ -20,21 +20,25 @@
 
 - Compression en .zip
 - Fichier de log
-- Commande CRON
 - Correctifs
 - Documentation utilisateur d'installation
 - Mémoire technique
 
 ## Prérequis :
 
-_commandes pip pour les installer_
-
-    pip install pysftp
-    sudo apt install at
-
+- Exécuter en _sudo_ le fichier _dependances.sh_
 - Des adresses IP statiques
 - Il faut se connecter manuellement en SFTP la première fois avec la machine
 
-## liens utiles :
+## Crontab :
 
-CRON : https://crontab.guru/ pour les automatisations
+**Arguments possibles pour le champs _période_ crontab**
+
+- reboot
+- yearly
+- annually
+- monthly
+- weekly
+- daily
+- midnight
+- hourly

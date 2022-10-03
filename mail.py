@@ -52,6 +52,6 @@ def mail_send(reussi=True):
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(serveur_smtp, port_smtp, context=context) as smtp:
         smtp.login(email, key)
-        smtp.sendmail(mail['From'], mail['To'], mail.as_string())
+        smtp.sendmail(mail['From'], mail["To"].split(","), mail.as_string())
         smtp.close()
     return
