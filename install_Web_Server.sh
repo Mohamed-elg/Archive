@@ -14,7 +14,7 @@ sudo systemctl restart apache2
 #Si tout s'est bien passé, le serveur web est fonctionnel
 
 #Mise en place du SSL
-sudo echo "Mise en place du SSL"
+sudo echo "Mise en place du SSL.."
 sleep 2
 
 $conf="<Directory /var/www/html>
