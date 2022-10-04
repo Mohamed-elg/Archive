@@ -44,10 +44,10 @@ def mail_send(reussi=True):
         body = 'Bonjour,\nVous trouverez en pièce jointe, le rapport des logs.\n\nCeci est un message automatique.'
         mail.set_content(body)
         now = datetime.now()
-        f = "logs/"+now.strftime("%Y-%m-%d")+".txt"
+        f = "logs/"+now.strftime("%Y-%m-%d")+".log"
 
         mail.add_attachment(open(f, 'rb').read(), 'text', 'plain',
-                            filename='Rapport.txt')
+                            filename='Rapport.log')
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(serveur_smtp, port_smtp, context=context) as smtp:
