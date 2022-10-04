@@ -36,11 +36,11 @@
 
 Arguments possibles pour le champs _période_ crontab
 
-- reboot
-- yearly
-- annually
-- monthly
-- weekly
-- daily
-- midnight
-- hourly
+- @reboot
+- @yearly
+- @annually
+- @monthly
+- @weekly
+- @daily
+- @midnight
+- @hourly

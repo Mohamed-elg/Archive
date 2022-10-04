@@ -4,7 +4,8 @@
   "user_sftp": "mohamed",
   "mdp_sftp": "0905",
   "date_expiration": "09/05/2077",
-  "periode": "daily",
+  "chemin_Programme":"/home/mohamed/Bureau/SFTP/main.py",
+  "periode": "@daily",
   "mail": {
     "email": "mohamed.elguermat9@gmail.com",
     "key": "qmjoqicyshjxzpfm",
