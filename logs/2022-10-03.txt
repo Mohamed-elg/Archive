@@ -1,0 +1,46 @@
+
+13:48:23  Ouverture du fichier de configuration
+13:48:23  Fermeture du fichier de configuration
+13:48:23  Fermeture du fichier de configuration
+13:48:23  Envoi du mail
+13:48:23  Création de la pièce-jointe
+14:15:47  Ouverture du fichier de configuration
+14:15:47  Fermeture du fichier de configuration
+14:15:47  Fermeture du fichier de configuration
+14:15:47  Envoi du mail
+14:15:47  Création de la pièce-jointe
+14:16:17  Ouverture du fichier de configuration
+14:16:17  Fermeture du fichier de configuration
+14:16:17  Fermeture du fichier de configuration
+14:16:17  Envoi du mail
+14:16:17  Création de la pièce-jointe
+14:17:00  Ouverture du fichier de configuration
+14:17:00  Fermeture du fichier de configuration
+14:17:00  Fermeture du fichier de configuration
+14:17:00  Envoi du mail
+14:17:00  Création de la pièce-jointe
+14:18:17  Ouverture du fichier de configuration
+14:18:17  Fermeture du fichier de configuration
+14:18:17  Fermeture du fichier de configuration
+14:18:17  Envoi du mail
+14:18:17  Création de la pièce-jointe
+14:18:24  Ouverture du fichier de configuration
+14:18:24  Fermeture du fichier de configuration
+14:18:24  Fermeture du fichier de configuration
+14:18:24  Envoi du mail
+14:18:24  Création de la pièce-jointe
+14:19:00  Ouverture du fichier de configuration
+14:19:00  Fermeture du fichier de configuration
+14:19:00  Fermeture du fichier de configuration
+14:19:00  Envoi du mail
+14:19:00  Création de la pièce-jointe
+14:19:40  Ouverture du fichier de configuration
+14:19:40  Fermeture du fichier de configuration
+14:19:40  Fermeture du fichier de configuration
+14:19:40  Envoi du mail
+14:19:40  Création de la pièce-jointe
+14:20:24  Ouverture du fichier de configuration
+14:20:24  Fermeture du fichier de configuration
+14:20:24  Fermeture du fichier de configuration
+14:20:24  Envoi du mail
+14:20:24  Création de la pièce-jointe

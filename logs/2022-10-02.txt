@@ -1,0 +1,13 @@
+
+18:54:29  Ouverture du fichier de configuration
+18:54:29  Fermeture du fichier de configuration du mail
+18:54:29  Fermeture du fichier de configuration
+18:54:29  Création de la pièce-jointe
+18:54:29  Connexion au serveur SMTP de google
+18:54:29  Envoi du mail
+19:46:32  Ouverture du fichier de configuration
+19:46:32  Fermeture du fichier de configuration
+19:46:32  Récupération de l'archive sur le serveur apache
+19:47:37  Ouverture du fichier de configuration
+19:47:37  Fermeture du fichier de configuration
+19:47:37  Récupération de l'archive sur le serveur apache
