@@ -1,5 +1,7 @@
 #!/bin/sudo bash
 
-p=configuration.json
-x=$(cat $p | grep periode | sed 's/ //g' | sed 's/"periode"://g' | sed 's/"//g' | sed 's/,//g')
-echo "@$x /home/mohamed/Bureau/SFTP/main.py" | crontab
+crontab -r
+config=configuration.json
+periode=$(cat $config | grep periode | sed 's/ //g' | sed 's/"periode"://g' | sed 's/"//g' | sed 's/,//g')
+chemin = $(cat $config | grep chemin_Programme | sed 's/ //g' | sed 's/"chemin_Programme"://g' | sed 's/"//g' | sed 's/,//g')
+echo "$periode $chemin " | crontab
