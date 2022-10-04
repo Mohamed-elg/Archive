@@ -28,13 +28,15 @@
 
 ## Prérequis :
 
-- Exécuter en _sudo_ le fichier _dependances.sh_
-- Des adresses IP statiques
-- Il faut se connecter manuellement en SFTP la première fois avec la machine
+1. Des adresses IP statiques
+2. Exécuter en _sudo_ le fichier _dependances.sh_
+3. Exécuter en _sudo_ le fichier _install_Web_Server.sh_ pour l'installation du serveur web
+4. Il faut se connecter manuellement en SFTP la première fois avec la machine
 
-## Crontab :
+## Automatisation de l'exécution du script principal :
 
-Arguments possibles pour le champs _période_ crontab
+**Il faut exécuter le fichier _automatisation_crontab.sh_ après chaque modification de la période ou du chemin du programme
+Arguments possibles pour le champs _période_ crontab**
 
 - @reboot
 - @yearly
