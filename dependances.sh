@@ -1,6 +1,7 @@
 #!/bin/sudo bash
 
 sudo apt update
+sudo apt install apache2 openssl
 sudo apt install python3
 sudo apt install wget
 sudo apt install unzip
