@@ -1,10 +1,13 @@
 #!/bin/python3
 
+from ast import Mod
+from os import rename #? 
 import subprocess
 import mail
 import modification_zip
 import link_sftp
 import gestion_log
+import rename
 
 # Programme principal à exécuter périodiquement
 # gestion_log.creer_rapport()
@@ -17,6 +20,18 @@ try:
     gestion_log.Ecrire_rapport("Fichier téléchargé et dézziper")
 
 # 2 - Contrôle du zip
+     
+
+    if(modification_zip.modification(a,file)):
+        
+        link_sftp.rm_file(ip, user, mdp, file)
+        gestion_log.Ecrire_rapport("suppression de l'ancienne version fichier")
+        rename.rename("")
+        modification_zip.compress_to_tar(file)
+        link_sftp.send_file(ip, user, mdp,file)
+        gestion_log.Ecrire_rapport("Ajout de la nouvelle version du fichier")
+
+        
 
 
 # 2- Renommer le fichier avec le bon format & recompresser
