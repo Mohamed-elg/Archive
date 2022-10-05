@@ -18,14 +18,6 @@
 
 ![alt text](neofetch.png)
 
-## Tâches restantes :
-
-- Compression en .zip
-- Fichier de log
-- Correctifs
-- Documentation utilisateur d'installation
-- Mémoire technique
-
 ## **II - Prérequis :**
 
 1. Des adresses IP statiques.
