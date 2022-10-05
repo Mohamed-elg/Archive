@@ -28,7 +28,7 @@
 
 ## Prérequis :
 
-1. auDes adresses IP statiques
+1. Des adresses IP statiques
 2. Exécuter en _sudo_ le fichier _dependances.sh_
 3. Exécuter en _sudo_ le fichier _install_Web_Server.sh_ pour l'installation du serveur web
 4. Il faut se connecter manuellement en SFTP la première fois avec la machine
