@@ -1,18 +1,18 @@
 #!/bin/python3
 
 from ast import Mod
-from os import rename #? 
 import subprocess
 import mail
 import modification_zip
 import link_sftp
 import gestion_log
 import rename
+import read_configuration
+import json
 
 # Programme principal à exécuter périodiquement
-# gestion_log.creer_rapport()
 
-
+file_new = 'test100.sql.zip'
 # 1 - Téléchargement & décompression du fichier
 gestion_log.Ecrire_rapport("Lancement du programme principal")
 try:
@@ -20,22 +20,17 @@ try:
     gestion_log.Ecrire_rapport("Fichier téléchargé et dézziper")
 
 # 2 - Contrôle du zip
-     
 
-    if(modification_zip.modification(a,file)):
-        
-        link_sftp.rm_file(ip, user, mdp, file)
+    if (modification_zip.modification(file_new, file)):
+        link_sftp.rm_file(file)
         gestion_log.Ecrire_rapport("suppression de l'ancienne version fichier")
-        rename.rename("")
-        modification_zip.compress_to_tar(file)
-        link_sftp.send_file(ip, user, mdp,file)
-        gestion_log.Ecrire_rapport("Ajout de la nouvelle version du fichier")
-
-        
 
 
 # 2- Renommer le fichier avec le bon format & recompresser
-
+        file_new = rename.rename(file_new)
+        modification_zip.compress_to_tar(file_new)
+        link_sftp.send_file(file_new)
+        gestion_log.Ecrire_rapport("Ajout de la nouvelle version du fichier")
 
 # 3 - Envoi d'un mail avec/sans rapport
     gestion_log.Ecrire_rapport("Programme terminé")
@@ -43,4 +38,4 @@ try:
 
 except:
     gestion_log.Ecrire_rapport("Echec du programme")
-    mail.mail_send(False)
+    mail.mail_send(False, read_configuration.objet_echec)

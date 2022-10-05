@@ -1,10 +1,11 @@
 {
   "ip_machine": "192.168.1.21",
-  "url_fichier": "http://192.168.1.21/test_export.sql.zip",
+  "url_fichier": "http://192.168.1.21/test100.sql.zip",
   "user_sftp": "mohamed",
   "mdp_sftp": "0905",
   "date_expiration": "09/05/2077",
-  "chemin_Programme":"/home/mohamed/Bureau/SFTP/main.py",
+  "chemin_Programme": "/home/mohamed/Bureau/SFTP/main.py",
+  "chemin_sftp": "/home/mohamed/Bureau/SFTP",
   "periode": "@daily",
   "mail": {
     "email": "mohamed.elguermat9@gmail.com",
