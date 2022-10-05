@@ -12,7 +12,7 @@
 - Méthode de transfert : SFTP ave openSSH
 - Automatisation : Crontab
 - Méthode email : SMTPS avec gmail
-- Fichier de configuration : format json (pour la lisibilité)
+- Fichier de configuration : format json
 
 <br>
 
@@ -75,7 +75,7 @@ Assurez vous d'être dans le bloc
 
 Le serveur web est opérationnel, on y accède avec https://[IP].
 
-## **IV - Mise en place du serveur de destination**
+## **IV - Mise en place du serveur de destination**
 
 **Choix retenu : Protocole SFTP**
 <br>
