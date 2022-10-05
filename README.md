@@ -39,7 +39,7 @@
 <br>
 Mise en place du serveur Apache:
 
-1. Installer les paquets/dépendances nécessaire en Executant en _sudo_ le fichier _depandance.sh_.
+1. Installer les paquets/dépendances nécessaire en Executant en _sudo_ le fichier _depandance.sh_ sur chacune des machines.
 2. Executer en _sudo_ le fichier _publish_WebServer.sh_ et entrer en argument le fichier à upload qui doit être dans le même répertoire que _publish_WebServer.sh_.
 3. Mettre les bon paramètres dans le fichier de configuration _configuration.json_ et le placer avec le script principal.
 
