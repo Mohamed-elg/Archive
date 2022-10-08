@@ -20,11 +20,14 @@
 
 ## **II - Prérequis :**
 
-1. Des adresses IP statiques.
-2. Exécuter en _sudo_ le fichier _dependances.sh_.
+1. Les adresses IP des serveurs doivent être statique.
+2. Exécuter en _sudo_ le fichier _dependances.sh_ afin de télécharger automatiquement toutes les dépendances nécessaires au bon fonction de l'utilitaire.
 3. Exécuter en _sudo_ le fichier _install_Web_Server.sh_ pour l'installation du serveur web.
 
-## **III - Mise en place du serveur web avec chiffrement SSL**
+## **III - Configuration de l'utilitaire :**
+Expliquer ici tous les champs du fichier config.json (mettre la partie VI ici?)
+
+## **IV - Mise en place du serveur web avec chiffrement SSL**
 
 **Choix retenu pour le serveur : Apache2**
 
@@ -75,7 +78,7 @@ Assurez vous d'être dans le bloc
 
 Le serveur web est opérationnel, on y accède avec https://[IP].
 
-## **IV - Mise en place du serveur de destination**
+## **V - Mise en place du serveur de destination**
 
 **Choix retenu : Protocole SFTP**
 <br>
@@ -85,7 +88,7 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 2. Créer un répertoire et ajouter son chemin dans le fichier de configuration
 3. Se connecter une première fois à la machine distante en sftp depuis la machine qui exécutera le script principal en entrant la commande _sudo sftp [user]@[ip]_ puis entrer le mot de passe de l'utilisateur puis autoriser la connexion. Vous êtes maintenant connecté en SFTP à la machine qui hébergera vos archives, vous pouvez fermer le terminal.
 
-## **V - Automatisation de l'exécution du script principal :**
+## **VI - Automatisation de l'exécution du script principal :**
 
 **Il faut exécuter le fichier _automatisation_crontab.sh_ après chaque modification de la période ou du chemin du programme
 Arguments possibles pour le champs _période_ dans le fichier configuration.**
