@@ -22,10 +22,42 @@
 
 1. Les adresses IP des serveurs doivent être statique.
 2. Exécuter en _sudo_ le fichier _dependances.sh_ afin de télécharger automatiquement toutes les dépendances nécessaires au bon fonction de l'utilitaire.
-3. Exécuter en _sudo_ le fichier _install_Web_Server.sh_ pour l'installation du serveur web.
 
 ## **III - Configuration de l'utilitaire :**
-Expliquer ici tous les champs du fichier config.json (mettre la partie VI ici?)
+
+Pour paramétrer l'éxecution du script, il faut modifier le fichier _configuration.json_ qui doit rester dans le répertoire _Main_ qui fait tourner le script principal. Nous allons expliciter les champs un à un.
+
+- url_fichier : lien vers le fichier sur le serveur web
+- ip_machine : Ip de la machine où l'on stocks les ficheirs en SFTP
+- user_sftp : utilisateur de la machine SFTP
+- mdp_sftp : mot de passe de la machien SFTP
+- chemin_Programme : Chemin dans lequel se trouve le programme principal
+- chemin_sftp : Chemin où seront stocké les fichiers à conserver sur la machine en SFTP
+- periode : période à laquelle doit s'éxecuter le programme principal. **Il faut exécuter le fichier _automatisation_crontab.sh_ après chaque modification de la période ou du chemin du programme.**
+
+  Arguments possibles pour le champs _période_ voir [Crontab](https://crontab.guru/):
+
+  - @reboot
+  - @yearly
+  - @annually
+  - @monthly
+  - @weekly
+  - @daily
+  - @midnight
+  - @hourly
+
+- Mail :
+  - email : adresse mail depuis laquelle le mail pourra être envoyé
+  - key : clé ou mot de passe de l'adresse mail
+  - Serveur_smtp : serveur smtp utilisé pour envoyé des mails (avec une adresse google, on utilise les serveurs smtp de google)
+  - port_smtp : ports associé au serveur smtp (pour google c'est 465)
+  - envoi_mail : booléen qui indique si oui ou non il faut envoyer un mail après l'éxecution du script
+  - logs_mail: booléen qui indique si oui ou non on envoi en pièce jointe du mail les logs
+  - Objet_mail_reussi : l'objet du mail en cas de succès du script
+  - Objet_mail_echec : l'objet du mail en cas d'échec du script
+  - destinataires_mail : le/les destinataires du mail
+- historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version est permise
+- perdiode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivé sur la machine en sftp
 
 ## **IV - Mise en place du serveur web avec chiffrement SSL**
 
@@ -87,17 +119,3 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 1. Installer OpenSSH avec la commande _sudo apt install openssh-server_
 2. Créer un répertoire et ajouter son chemin dans le fichier de configuration
 3. Se connecter une première fois à la machine distante en sftp depuis la machine qui exécutera le script principal en entrant la commande _sudo sftp [user]@[ip]_ puis entrer le mot de passe de l'utilisateur puis autoriser la connexion. Vous êtes maintenant connecté en SFTP à la machine qui hébergera vos archives, vous pouvez fermer le terminal.
-
-## **VI - Automatisation de l'exécution du script principal :**
-
-**Il faut exécuter le fichier _automatisation_crontab.sh_ après chaque modification de la période ou du chemin du programme
-Arguments possibles pour le champs _période_ dans le fichier configuration.**
-
-- @reboot
-- @yearly
-- @annually
-- @monthly
-- @weekly
-- @daily
-- @midnight
-- @hourly

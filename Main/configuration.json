@@ -1,9 +1,8 @@
 {
-  "ip_machine": "192.168.1.21",
   "url_fichier": "http://192.168.1.21/test100.sql.zip",
+  "ip_machine": "192.168.1.21",
   "user_sftp": "mohamed",
   "mdp_sftp": "0905",
-  "date_expiration": "09/05/2077",
   "chemin_Programme": "/home/mohamed/Bureau/SFTP/main.py",
   "chemin_sftp": "/home/mohamed/Bureau/SFTP",
   "periode": "@daily",

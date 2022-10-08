@@ -11,6 +11,7 @@ ip = config["ip_machine"]
 user = config["user_sftp"]
 mdp = config["mdp_sftp"]
 
+Envoi_mail = config['mail']['Envoi_mail']
 email = config["mail"]["email"]
 key = config['mail']["key"]
 destinataires = config['mail']["destinataires_mail"]
@@ -21,6 +22,8 @@ port_smtp = config['mail']['port_smtp']
 
 objet_reussi = config['mail']["Objet_mail_reussi"]
 objet_echec = config['mail']["Objet_mail_echec"]
+
+historisation_b = config['historisation']
 
 chemin_sfrp = config['chemin_sftp']
 

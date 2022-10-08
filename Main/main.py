@@ -6,13 +6,13 @@ import mail
 import modification_zip
 import link_sftp
 import gestion_log
-import rename
-import read_configuration
+import historisation
 import json
 
 # Programme principal à exécuter périodiquement
 
 file_new = 'test100.sql.zip'
+
 # 1 - Téléchargement & décompression du fichier
 gestion_log.Ecrire_rapport("Lancement du programme principal")
 try:
@@ -21,21 +21,31 @@ try:
 
 # 2 - Contrôle du zip
 
-    if (modification_zip.modification(file_new, file)):
-        link_sftp.rm_file(file) #! Pourquoi on supprime sur le serveur stfp?
-        gestion_log.Ecrire_rapport("suppression de l'ancienne version fichier")
-
+    # cas ou le fihcier n'a pas changé
+    if (not modification_zip.modification(file_new, file)):
+        # ! j'ai changer la condition du if
+        link_sftp.rm_file(file)
+        gestion_log.Ecrire_rapport("suppression de l'ancien fichier")
 
 # 2- Renommer le fichier avec le bon format & recompresser
+        gestion_log.Ecrire_rapport("Ajout du nouveau fichier")
         file_new = rename.rename(file_new)
         modification_zip.compress_to_tar(file_new)
-        link_sftp.send_file(file_new) #! Plutôt utliser la fonction historisation.enregistrement() pour gérer la suppression auto ?
-        gestion_log.Ecrire_rapport("Ajout de la nouvelle version du fichier")
+        historisation.enregistrement(file_new)
+
+    else:
+        gestion_log.Ecrire_rapport("Ajout d'une nouvelle version du fichier")
+        file_new = rename.rename(file_new)
+        modification_zip.compress_to_tar(file_new)
+        historisation.enregistrement(file_new)
+
 
 # 3 - Envoi d'un mail avec/sans rapport
-    gestion_log.Ecrire_rapport("Programme terminé")
-    mail.mail_send()
+    gestion_log.Ecrire_rapport("Programme terminé avec succès")
+    if read_configuration.Envoi_mail:
+        mail.mail_send()
 
 except:
     gestion_log.Ecrire_rapport("Echec du programme")
-    mail.mail_send(False, read_configuration.objet_echec)
+    if read_configuration.Envoi_mail:
+        mail.mail_send(False, read_configuration.objet_echec)
