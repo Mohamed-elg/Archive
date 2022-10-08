@@ -24,7 +24,8 @@ objet_reussi = config['mail']["Objet_mail_reussi"]
 objet_echec = config['mail']["Objet_mail_echec"]
 
 historisation_b = config['historisation']
+periode = config['periode_suppression']
 
-chemin_sfrp = config['chemin_sftp']
+chemin_sftp = config['chemin_sftp']
 
 gestion_log.Ecrire_rapport("Fermeture du fichier de configuration")

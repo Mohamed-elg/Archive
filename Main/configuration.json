@@ -3,12 +3,12 @@
   "ip_machine": "192.168.1.21",
   "user_sftp": "mohamed",
   "mdp_sftp": "0905",
-  "chemin_Programme": "/home/mohamed/Bureau/SFTP/main.py",
+  "chemin_Programme": "/home/mohamed/Archive/Main/main.py",
   "chemin_sftp": "/home/mohamed/Bureau/SFTP",
   "periode": "@daily",
   "mail": {
     "email": "mohamed.elguermat9@gmail.com",
-    "key": "qmjoqicyshjxzpfm",
+    "key": "yjksodxfmjvpwjhz",
     "serveur_smtp": "smtp.gmail.com",
     "port_smtp": "465",
     "Envoi_mail": true,
@@ -22,5 +22,5 @@
     ]
   },
   "historisation": true,
-  "perdiode_suppression": "7"
+  "periode_suppression": "7"
 }

@@ -2,12 +2,12 @@
 
 import pysftp
 import read_configuration
+import gestion_log
 
 # Connexion et partage de fichier via le serveur SFTP
-#!les logs et les chemins sont susceptibles de changer
 
 
-def send_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sfrp):
+def send_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sftp):
     """File --> nom du fichier + extension"""
     try:
         pysftp.Connection(ip, username=user, password=mdp, port=22).put(
@@ -20,7 +20,7 @@ def send_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=
     return
 
 
-def get_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sfrp):
+def get_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sftp):
     """File --> nom du fichier + extension"""
     try:
         pysftp.Connection(ip, username=user, password=mdp, port=22).get(
@@ -35,7 +35,7 @@ def get_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=r
     return
 
 
-def rm_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sfrp):
+def rm_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sftp):
     """File --> nom du fichier + extension"""
     try:
         pysftp.Connection(ip, username=user, password=mdp, port=22).remove(

@@ -6,6 +6,7 @@ import ssl
 from datetime import datetime
 from time import strftime
 import read_configuration
+import gestion_log
 
 
 def mail_send(reussi=True, objet=read_configuration.objet_reussi):
@@ -22,7 +23,7 @@ def mail_send(reussi=True, objet=read_configuration.objet_reussi):
         body = 'Bonjour,\nVous trouverez en pièce jointe, le rapport des logs.\n\nCeci est un message automatique.'
         mail.set_content(body)
         now = datetime.now()
-        f = "Main/logs/"+now.strftime("%Y-%m-%d")+".log"
+        f = "logs/"+now.strftime("%Y-%m-%d")+".log"
 
         mail.add_attachment(open(f, 'rb').read(), 'text', 'plain',
                             filename='Rapport.log')
