@@ -6,4 +6,5 @@ code="<!DOCTYPE><html><head><meta http-equiv='Content-Type' content='text/html c
 
 sudo echo $code >/var/www/html/index.html
 sudo systemctl restart apache2
+echo "Le serveur web est opérationnel"
 #Si tout s'est bien passé, le serveur web est fonctionnel
