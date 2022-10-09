@@ -1,10 +1,10 @@
 #!/bin/python3
 
 import os
-from datetime import datetime
+from datetime import date
 import gestion_log
 
-# Permet de rennomer un fichier par sa date de création
+# Permet de rennomer un fichier par la date du jour
 
 
 def rename(file):
