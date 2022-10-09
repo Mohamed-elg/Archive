@@ -52,7 +52,7 @@ try:
         mail.mail_send()
     gestion_log.Ecrire_rapport("Programme terminé avec succès")
 except:
-    gestion_log.Ecrire_rapport(
-        "Le programme ne s'est pas éxecuté dans son intégralité")
     if read_configuration.Envoi_mail:
         mail.mail_send(False, read_configuration.objet_echec)
+    gestion_log.Ecrire_rapport(
+        "Le programme ne s'est pas éxecuté dans son intégralité")
