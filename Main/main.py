@@ -1,6 +1,9 @@
 #!/bin/python3
 
+from datetime import date
+from datetime import timedelta
 from ast import Mod
+import os
 import subprocess
 import mail
 import modification_zip
@@ -9,46 +12,37 @@ import gestion_log
 import historisation
 import rename
 import json
+import read_configuration
 
 # Programme principal à exécuter périodiquement
 
-file_dl = 'test100.sql'
-file = 'test200.sql'
 
-# 1 - Téléchargement & décompression du fichier
+# 1 - Téléchargement & décompression du fichier depuis le serveur web et le fichier de la veille depuis le serveur SFTP
 gestion_log.Ecrire_rapport("Lancement du programme principal")
 try:
+    file_dl = 'test100.sql'
+    file_old = str(date.today()-timedelta(days=1))+'.tgz'
+    link_sftp.get_file(file_old)
+    os.system('tar zxvf '+file_old+' && rm '+file_old)
+    file = str(date.today()-timedelta(days=1))+'.sql'
     subprocess.call("./file_apache.sh")
     gestion_log.Ecrire_rapport("Fichier téléchargé et dézziper")
 
-# 2 - Contrôle du zip
+# 2 - Contrôle du fichier SQL
 
-    # cas ou le fichier n'a pas changé
-    if (not modification_zip.modification(file_new, file)):
-        try:
-            gestion_log.Ecrire_rapport("suppression de l'ancien fichier")
-            # ! j'ai changer la condition du if
-            link_sftp.rm_file(file)
-        except:
-            pass
-
-
-# 2- Renommer le fichier avec le bon format & recompresser
+    if (modification_zip.modification(file_dl, file)):
         gestion_log.Ecrire_rapport("Ajout du nouveau fichier")
+        # 3- Renommer le fichier avec le bon format & recompresser puis envoyer en SFTP sur le serveur distant
+        file_dl = rename.rename(file_dl)
+        file_new = modification_zip.compress_to_tar(file_dl)
         file_new = rename.rename(file_new)
-        file_dl = file_new
-        file_new = modification_zip.compress_to_tar(file_new)
         historisation.enregistrement(file_new)
-
+        os.system('rm '+file_dl+' && rm '+file)
+    # cas ou le fichier n'a pas changé
     else:
-        gestion_log.Ecrire_rapport("Ajout d'une nouvelle version du fichier")
-        file_new = rename.rename(file_new)
-        file_dl = file_new
-        file_new = modification_zip.compress_to_tar(file_new)
-        historisation.enregistrement(file_new)
-
-
-# 3 - Envoi d'un mail avec/sans rapport
+        gestion_log.Ecrire_rapport(
+            'Le fichier est le même que celui de la veille, aucune action nécessaire')
+# 4 - Envoi d'un mail avec/sans rapport
     gestion_log.Ecrire_rapport("Programme terminé avec succès")
     if read_configuration.Envoi_mail:
         mail.mail_send()

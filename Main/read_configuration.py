@@ -4,7 +4,7 @@ import gestion_log
 
 gestion_log.Ecrire_rapport('Ouverture fichier de configuration')
 
-with open('Main/configuration.json', 'r') as js:
+with open('configuration.json', 'r') as js:
     config = json.load(js)
 
 ip = config["ip_machine"]
@@ -27,5 +27,6 @@ historisation_b = config['historisation']
 periode = config['periode_suppression']
 
 chemin_sftp = config['chemin_sftp']
+chemin_prg = config['chemin_Programme']
 
 gestion_log.Ecrire_rapport("Fermeture du fichier de configuration")
