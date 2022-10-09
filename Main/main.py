@@ -49,10 +49,10 @@ try:
     os.system('rm '+file_dl+' && rm '+file_old)
 
 # 4 - Envoi d'un mail avec/sans rapport
-    gestion_log.Ecrire_rapport("Programme terminé avec succès")
+    
     if read_configuration.Envoi_mail:
         mail.mail_send()
-
+    gestion_log.Ecrire_rapport("Programme terminé avec succès")
 except:
     gestion_log.Ecrire_rapport("Echec du programme")
     if read_configuration.Envoi_mail:
