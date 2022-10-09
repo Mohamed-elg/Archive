@@ -8,21 +8,18 @@ from zipfile import ZipExtFile, ZipFile
 
 import os
 
-# Modification par lecture ligne par ligne et comparaison avec
-
+# Modification à l'aide de la fonction diff
 
 def modification(a, b):
-    """"Les arguments sont les chemins des fichiers Fonction qui vérifie les modifications entre les fichiers sql, un fichier est créée avec toute les modifications : result et les modifs contiennent des (+/-), et on cherche dans ce fichier la présence de +. """
-    d = Differ()
-    # fichier résultant de la comparaison des deux .sql
-    result = list(d.compare(open(a, 'r').readlines(),
-                  open(b, 'r').readlines()))
-    for line in result:  # on vérifie ligne par ligne
-        if ('+' in line):  # si le charactère + est trouvé -> il y a eu une modification
-            print("find a modification")
-            return (True)
-    print("no modification found")
-    return (False)
+    r = os.popen("if diff -q " + a + " " + b + " ; then echo '0' ; else echo '1' ; fi ;").read()
+    r = r.split()
+
+    if(r[0] == '0'):
+        print("Pas de modification nécéssaire")
+        return(False)
+    else:
+        print("Modification du fichier")
+        return(True)
 
 
 def zip_(file):
