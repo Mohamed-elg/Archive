@@ -2,8 +2,6 @@ import json
 import gestion_log
 
 
-gestion_log.Ecrire_rapport('Ouverture fichier de configuration')
-
 with open('configuration.json', 'r') as js:
     config = json.load(js)
 
@@ -16,7 +14,7 @@ email = config["mail"]["email"]
 key = config['mail']["key"]
 destinataires = config['mail']["destinataires_mail"]
 bool_log = config['mail']["logs_mail"]
-gestion_log.Ecrire_rapport("Fermeture du fichier de configuration")
+
 serveur_smtp = config['mail']['serveur_smtp']
 port_smtp = config['mail']['port_smtp']
 
@@ -28,5 +26,3 @@ periode = config['periode_suppression']
 
 chemin_sftp = config['chemin_sftp']
 chemin_prg = config['chemin_Programme']
-
-gestion_log.Ecrire_rapport("Fermeture du fichier de configuration")

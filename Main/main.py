@@ -32,7 +32,6 @@ try:
 # 2 - Contrôle du fichier SQL
 
         if (modification_zip.modification(file_dl, file_old)):
-            gestion_log.Ecrire_rapport("Ajout du nouveau fichier")
             # 3- Renommer le fichier avec le bon format & recompresser puis envoyer en SFTP sur le serveur distant
             file_dl = rename.rename(file_dl)
             file_new = modification_zip.compress_to_tar(file_dl)
@@ -43,7 +42,6 @@ try:
             gestion_log.Ecrire_rapport(
                 'Le fichier est le même que celui de la veille, aucune action nécessaire')
     else:
-        gestion_log.Ecrire_rapport("Ajout du nouveau fichier")
         file_dl = rename.rename(file_dl)
         file_new = modification_zip.compress_to_tar(file_dl)
         file_new = rename.rename(file_new)

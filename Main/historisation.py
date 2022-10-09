@@ -17,6 +17,6 @@ def enregistrement(file, ip=read_configuration.ip, user=read_configuration.user,
         os.system(
             f"echo 'python3 {chemin_p}/suppression_sftp.py {file}' | at now +{read_configuration.periode} days")
         gestion_log.Ecrire_rapport(
-            f"Suppression du fichier distant : {file} prévue pour dans {read_configuration.periode} jours")
+            f"Suppression du fichier distant : {file} prévue dans {read_configuration.periode} jours")
         os.system(f'rm {file}')
     return

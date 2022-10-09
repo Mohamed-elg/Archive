@@ -15,8 +15,8 @@ def send_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=
         print('Envoi réussi')
         gestion_log.Ecrire_rapport(f"Envoi de {file} via SFTP réussi")
     except:
-        print("Echec de l'envoi")
-        gestion_log.Ecrire_rapport("ECHEC de l'envoi de " + file+" via SFTP")
+        print("Echec de l'envoi SFTP")
+        gestion_log.Ecrire_rapport("echec de l'envoi de " + file+" via SFTP")
     return
 
 
@@ -30,7 +30,7 @@ def get_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=r
             "Récupération de " + file + " via SFTP réussie")
         return True
     except:
-        print('Echec de la réception')
+        print('Echec de la réception SFTP')
         gestion_log.Ecrire_rapport(
             "Echec de la récupération de " + file + " via SFTP")
         return False
@@ -42,10 +42,6 @@ def rm_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=re
         pysftp.Connection(ip, username=user, password=mdp, port=22).remove(
             f'{chemin}/{file}')
         print('Suppression réussie')
-        gestion_log.Ecrire_rapport(
-            "Suppression du fichier distant : "+file+" réussie")
     except:
-        print('Echec de la suppression')
-        gestion_log.Ecrire_rapport(
-            "ECHEC de la suppression du fichier distant : "+file)
+        pass
     return

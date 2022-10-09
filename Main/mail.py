@@ -16,8 +16,6 @@ def mail_send(reussi=True, objet=read_configuration.objet_reussi):
     mail['To'] = read_configuration.destinataires
     mail['Subject'] = objet
 
-    gestion_log.Ecrire_rapport("Envoi du mail")
-
     if read_configuration.bool_log:
         gestion_log.Ecrire_rapport("Création de la pièce-jointe")
         body = 'Bonjour,\nVous trouverez en pièce jointe, le rapport des logs.\n\nCeci est un message automatique.'
@@ -28,6 +26,7 @@ def mail_send(reussi=True, objet=read_configuration.objet_reussi):
         mail.add_attachment(open(f, 'rb').read(), 'text', 'plain',
                             filename='Rapport.log')
 
+    gestion_log.Ecrire_rapport("Envoi du mail")
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(read_configuration.serveur_smtp, read_configuration.port_smtp, context=context) as smtp:
         smtp.login(read_configuration.email, read_configuration.key)
