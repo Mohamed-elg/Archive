@@ -55,7 +55,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
   - logs_mail: booléen qui indique si oui ou non on envoi en pièce jointe du mail les logs
   - Objet_mail_reussi : l'objet du mail en cas de succès du script
   - Objet_mail_echec : l'objet du mail en cas d'échec du script
-  - destinataires_mail : le/les destinataires du mail
+  - destinataires_mail : le/les destinataire(s) du mail
 - historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version est permise
 - perdiode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivé sur la machine en sftp
 
@@ -120,4 +120,4 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 2. Créer un répertoire et ajouter son chemin dans le fichier de configuration
 3. Se connecter une première fois à la machine distante en sftp depuis la machine qui exécutera le script principal en root en entrant la commande _sftp [user]@[ip]_ puis entrer le mot de passe de l'utilisateur puis autoriser la connexion. Vous êtes maintenant connecté en SFTP à la machine qui hébergera vos archives, vous pouvez fermer le terminal.
 
-NB: _user_ et _ip_ ainsi que le mot de passe sont ceux de la machine distante vers laquuelle on se connecte en SFTP
+NB: _user_ et _ip_ ainsi que le mot de passe sont ceux de la machine distante vers laquelle on se connecte en SFTP
