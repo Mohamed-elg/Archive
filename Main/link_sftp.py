@@ -28,11 +28,12 @@ def get_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=r
         print('Reception réussie')
         gestion_log.Ecrire_rapport(
             "Récupération de " + file + " via SFTP réussie")
+        return True
     except:
         print('Echec de la réception')
         gestion_log.Ecrire_rapport(
-            "ECHEC de la récupération de " + file + " via SFTP")
-    return
+            "Echec de la récupération de " + file + " via SFTP")
+        return False
 
 
 def rm_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=read_configuration.mdp, chemin=read_configuration.chemin_sftp):
