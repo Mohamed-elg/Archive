@@ -11,5 +11,5 @@ def rename(file):
     new_name = str(date.today())
     os.rename(file, new_name+'.'+file.split('.')[1])
     gestion_log.Ecrire_rapport(
-        f"Fichier : {file} renommé en : {new_name}")
+        f"Fichier : {file} renommé en : {new_name}.{file.split('.')[1]}")
     return new_name+'.'+file.split('.')[1]

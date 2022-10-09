@@ -35,7 +35,6 @@ try:
             # 3- Renommer le fichier avec le bon format & recompresser puis envoyer en SFTP sur le serveur distant
             file_dl = rename.rename(file_dl)
             file_new = modification_zip.compress_to_tar(file_dl)
-            file_new = rename.rename(file_new)
             historisation.enregistrement(file_new)
         # cas ou le fichier n'a pas changé
         else:
@@ -44,7 +43,6 @@ try:
     else:
         file_dl = rename.rename(file_dl)
         file_new = modification_zip.compress_to_tar(file_dl)
-        file_new = rename.rename(file_new)
         historisation.enregistrement(file_new)
     os.system('rm '+file_dl+' && rm '+file_old)
 
@@ -54,6 +52,7 @@ try:
         mail.mail_send()
 
 except:
-    gestion_log.Ecrire_rapport("Echec du programme")
+    gestion_log.Ecrire_rapport(
+        "Le programme ne s'est pas éxecuté dans son intégralité")
     if read_configuration.Envoi_mail:
         mail.mail_send(False, read_configuration.objet_echec)
