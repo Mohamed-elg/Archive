@@ -47,22 +47,3 @@ def compress_to_tar(a):
 def sql_compare(a, b):
     os.system("diff -c" + a + " " + b)
     return
-
-# A revérifier, il permet la décompression du fichier
-# def decompress_tar(a):
-#     os.system("tar -xvzf " + a)
-#     return
-
-# decompress_tar("testa.tgz")
-
-
-# Ensemble de TEST réalisé 04/10/22 VALIDE
-
-# TEST zip_ : .sql devient un .zip, valide
-#       exemple de test : zip_('test100-copy.sql')
-# TEST decompress_ : decompresse un fichier .zip, valide
-#       exemple de test : decompress('test100-copy.zip')
-# TEST compress_to_tar , compresse un fichier en .tgz, valide
-#       exemple de test : compress_to_tar('test100-copy.sql')
-# TEST modification : compare deux fichiers sql entre eux et indique s'il y a une modificaiton,
-    # exemple de test :modification('test100-copy.sql','test100-copy2.sql') , valide
