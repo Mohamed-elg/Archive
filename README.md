@@ -55,7 +55,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
   - logs_mail: booléen qui indique si oui ou non on envoi en pièce jointe du mail les logs
   - Objet_mail_reussi : l'objet du mail en cas de succès du script
   - Objet_mail_echec : l'objet du mail en cas d'échec du script
-  - destinataires_mail : le/les destinataires du mail
+  - destinataires_mail : le/les destinataire(s) du mail
 - historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version est permise
 - perdiode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivé sur la machine en sftp
 
