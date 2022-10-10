@@ -1,4 +1,4 @@
-# **Mini-Projet : utilitaire d'archive**
+# **Mini-Projet : Utilitaire d'archive**
 
 ## **Guide d'installation & d'utilisation**
 
@@ -14,14 +14,17 @@
 - Méthode email : SMTPS avec gmail
 - Fichier de configuration : format json
 
-<br>
-
 ![alt text](neofetch.png)
+
+<br>
 
 ## **II - Prérequis :**
 
+0. Une machine sous Linux avec une distribution Debian ou basé sur Debian.
 1. Les adresses IP des serveurs doivent être statique.
 2. Exécuter en _sudo_ le fichier _dependances.sh_ afin de télécharger automatiquement toutes les dépendances nécessaires au bon fonction de l'utilitaire.
+
+<br>
 
 ## **III - Configuration du script :**
 
@@ -59,18 +62,18 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
 - historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version sont permises.
 - perdiode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivé sur la machine en sftp
 
+<br>
+
 ## **IV - Mise en place du serveur web avec chiffrement SSL**
 
 **Choix retenu pour le serveur : Apache2**
 
-<br>
 Mise en place du serveur Apache:
 
 1. Installer les paquets/dépendances nécessaire en Executant en _sudo_ le fichier _depandance.sh_ sur chacune des machines.
 2. Executer en _sudo_ le fichier _publish_WebServer.sh_, le fichier 'test100.sql.zip' à upload doit être dans le répertoire _/var/www/html_ de la machine qui hébergera le serveur.
 3. Mettre les bon paramètres dans le fichier de configuration _configuration.json_ et le placer avec le script principal.
 
-<br>
 Mise en place du chiffrement SSL :
 
 1. Créer un répertoire pour les certificats avec _sudo mkdir /etc/apache2/certs_ puis se placer dedans _cd /etc/apache2/certs_.
@@ -93,22 +96,19 @@ Mise en place du chiffrement SSL :
 5. Pour automatiser la redirection en HTTPS ajouter dans la règle du port 80 :
 
 ```
+<VirtualHost *:80>
+    ...
     RewriteEngine on
     RewriteCond %{HTTPS} !=on
     RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
-```
-
-Assurez vous d'être dans le bloc
-
-```
-<VirtualHost *:80>
-    ...
 </VirtualHost>
 ```
 
 6. Relancer le serveur apache avec _sudo systemctl restart apache2_.
 
 Le serveur web est opérationnel, on y accède avec https://[IP].
+
+<br>
 
 ## **V - Mise en place du serveur de destination**
 
@@ -122,7 +122,7 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 
 **NB :** _user_ et _ip_ ainsi que le mot de passe sont ceux de la machine distante vers laquelle on se connecte en SFTP
 
-## **IV - Exécution du script**
+## **VI - Exécution du script**
 
 Une fois toutes les étapes précedentes réalisées on peut passer à la partie éxecution du code.
 
