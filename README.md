@@ -23,7 +23,7 @@
 1. Les adresses IP des serveurs doivent être statique.
 2. Exécuter en _sudo_ le fichier _dependances.sh_ afin de télécharger automatiquement toutes les dépendances nécessaires au bon fonction de l'utilitaire.
 
-## **III - Configuration de l'utilitaire :**
+## **III - Configuration du script :**
 
 Pour paramétrer l'éxecution du script, il faut modifier le fichier _configuration.json_ qui doit rester dans le répertoire _Main_ qui fait tourner le script principal. Nous allons expliciter les champs un à un.
 
@@ -56,7 +56,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
   - Objet_mail_reussi : l'objet du mail en cas de succès du script
   - Objet_mail_echec : l'objet du mail en cas d'échec du script
   - destinataires_mail : le/les destinataire(s) du mail
-- historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version est permise
+- historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version sont permises.
 - perdiode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivé sur la machine en sftp
 
 ## **IV - Mise en place du serveur web avec chiffrement SSL**
@@ -67,7 +67,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
 Mise en place du serveur Apache:
 
 1. Installer les paquets/dépendances nécessaire en Executant en _sudo_ le fichier _depandance.sh_ sur chacune des machines.
-2. Executer en _sudo_ le fichier _publish_WebServer.sh_, le fichier 'test100.sql.zip' à upload doit être dans le répertoire _/var/www/html_.
+2. Executer en _sudo_ le fichier _publish_WebServer.sh_, le fichier 'test100.sql.zip' à upload doit être dans le répertoire _/var/www/html_ de la machine qui hébergera le serveur.
 3. Mettre les bon paramètres dans le fichier de configuration _configuration.json_ et le placer avec le script principal.
 
 <br>
@@ -120,4 +120,17 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 2. Créer un répertoire et ajouter son chemin dans le fichier de configuration
 3. Se connecter une première fois à la machine distante en sftp depuis la machine qui exécutera le script principal en root en entrant la commande _sftp [user]@[ip]_ puis entrer le mot de passe de l'utilisateur puis autoriser la connexion. Vous êtes maintenant connecté en SFTP à la machine qui hébergera vos archives, vous pouvez fermer le terminal.
 
-NB: _user_ et _ip_ ainsi que le mot de passe sont ceux de la machine distante vers laquelle on se connecte en SFTP
+**NB :** _user_ et _ip_ ainsi que le mot de passe sont ceux de la machine distante vers laquelle on se connecte en SFTP
+
+## **IV - Exécution du script**
+
+Une fois toutes les étapes précedentes réalisées on peut passer à la partie éxecution du code.
+
+1. Choisir les bons paramètres dans le fichier _configuration.json_
+2. Exectuer le fichier _automatisation_crontab.sh_
+
+**L'utilitaire est maintenant opérationnel et s'éxecutera selon la période indiqué dans _configuration.json_**
+
+**NB 1 :** Si vous changez la période dans le fichier configuration, il faut rééxecuter _automatisation_crontab.sh_.
+
+**NB 2 :** L'éxecution du fichier _automatisation_crontab.sh_ supprime toutes les tâches mise en place avec crontab. Si vous avez d'autres tâches à automatiser, il faut éxecuter _automatisation_crontab.sh_ en premier.

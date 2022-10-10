@@ -30,9 +30,9 @@ def get_file(file, ip=read_configuration.ip, user=read_configuration.user, mdp=r
             "Récupération de " + file + " via SFTP réussie")
         return True
     except:
-        print('Echec de la réception SFTP')
+        print('Echec de la réception SFTP, pas de fichier de la veille')
         gestion_log.Ecrire_rapport(
-            "Echec de la récupération de " + file + " via SFTP")
+            "Impossible de récupérer " + file + " via SFTP, pas de fichier de la veille.")
         return False
 
 
