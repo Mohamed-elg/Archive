@@ -41,9 +41,3 @@ def compress_to_tar(a):
     file_name = a.split('.')
     os.system("tar -cvzf " + file_name[0] + ".tgz "+a)
     return (file_name[0]+'.tgz')
-
-
-# Test d'une nouvelle fonction compare depuis le terminal à revérifier
-def sql_compare(a, b):
-    os.system("diff -c" + a + " " + b)
-    return
