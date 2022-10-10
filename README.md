@@ -118,7 +118,7 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 
 1. Installer OpenSSH avec la commande _sudo apt install openssh-server_
 2. Créer un répertoire et ajouter son chemin dans le fichier de configuration
-3. Se connecter une première fois à la machine distante en sftp depuis la machine qui exécutera le script principal en root en entrant la commande _sftp [user]@[ip]_ puis entrer le mot de passe de l'utilisateur puis autoriser la connexion. Vous êtes maintenant connecté en SFTP à la machine qui hébergera vos archives, vous pouvez fermer le terminal.
+3. Se connecter une première fois à la machine distante en sftp depuis la machine qui exécutera le script principal en **root** en entrant la commande _sftp [user]@[ip]_ puis entrer le mot de passe de l'utilisateur puis autoriser la connexion. Vous êtes maintenant connecté en SFTP à la machine qui hébergera vos archives, vous pouvez fermer le terminal.
 
 **NB :** _user_ et _ip_ ainsi que le mot de passe sont ceux de la machine distante vers laquelle on se connecte en SFTP
 
