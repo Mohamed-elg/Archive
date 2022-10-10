@@ -70,7 +70,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
 
 Mise en place du serveur Apache:
 
-1. Installer les paquets/dépendances nécessaire en Executant en _sudo_ le fichier _depandance.sh_ sur chacune des machines.
+1. Installer les paquets/dépendances nécessaire en Executant en **root** le fichier _depandance.sh_ sur chacune des machines.
 2. Executer en _sudo_ le fichier _publish_WebServer.sh_, le fichier 'test100.sql.zip' à upload doit être dans le répertoire _/var/www/html_ de la machine qui hébergera le serveur.
 3. Mettre les bon paramètres dans le fichier de configuration _configuration.json_ et le placer avec le script principal.
 
