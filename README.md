@@ -7,7 +7,7 @@
 ## **I - Configuration**
 
 - Machine virtuel : Linux Debian 11 (bullseye)
-- Language : Python3 et Bash
+- Langage : Python3 et Bash
 - Serveur web : Apache
 - Méthode de transfert : SFTP ave openSSH
 - Automatisation : Crontab
@@ -21,7 +21,7 @@
 ## **II - Prérequis :**
 
 0. Une machine sous Linux avec une distribution Debian ou basé sur Debian.
-1. Les adresses IP des serveurs doivent être statique.
+1. Les adresses IP des serveurs doivent être statiques.
 2. Exécuter en _sudo_ le fichier _dependances.sh_ afin de télécharger automatiquement toutes les dépendances nécessaires au bon fonction de l'utilitaire.
 
 <br>
@@ -33,7 +33,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
 - url_fichier : lien vers le fichier sur le serveur web
 - ip_machine : Ip de la machine où l'on stocks les ficheirs en SFTP
 - user_sftp : utilisateur de la machine SFTP
-- mdp_sftp : mot de passe de la machien SFTP
+- mdp_sftp : mot de passe de la machine SFTP
 - chemin_Programme : Chemin dans lequel se trouve le programme principal
 - chemin_sftp : Chemin où seront stocké les fichiers à conserver sur la machine en SFTP
 - periode : période à laquelle doit s'éxecuter le programme principal. **Il faut exécuter le fichier _automatisation_crontab.sh_ après chaque modification de la période ou du chemin du programme.**
@@ -52,7 +52,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
 - Mail :
   - email : adresse mail depuis laquelle le mail pourra être envoyé
   - key : clé ou mot de passe de l'adresse mail
-  - Serveur_smtp : serveur smtp utilisé pour envoyé des mails (avec une adresse google, on utilise les serveurs smtp de google)
+  - Serveur_smtp : serveur smtp utilisé pour envoyer des mails (avec une adresse google, on utilise les serveurs smtp de google)
   - port_smtp : ports associé au serveur smtp (pour google c'est 465)
   - envoi_mail : booléen qui indique si oui ou non il faut envoyer un mail après l'éxecution du script
   - logs_mail: booléen qui indique si oui ou non on envoi en pièce jointe du mail les logs
@@ -60,7 +60,7 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
   - Objet_mail_echec : l'objet du mail en cas d'échec du script
   - destinataires_mail : le/les destinataire(s) du mail
 - historisation : booléen qui indique si oui ou non la sauvegarde de plusieurs version sont permises.
-- perdiode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivé sur la machine en sftp
+- periode_suppression : en jours, indique la durée de vie des fichiers une fois qu'ils sont archivés sur la machine en sftp
 
 <br>
 
@@ -70,9 +70,9 @@ Pour paramétrer l'éxecution du script, il faut modifier le fichier _configurat
 
 Mise en place du serveur Apache:
 
-1. Installer les paquets/dépendances nécessaire en Executant en **root** le fichier _depandance.sh_ sur chacune des machines.
+1. Installer les paquets/dépendances nécessaire en Executant en **root** le fichier _dependances.sh_ sur chacune des machines.
 2. Executer en _sudo_ le fichier _publish_WebServer.sh_, le fichier 'test100.sql.zip' à upload doit être dans le répertoire _/var/www/html_ de la machine qui hébergera le serveur.
-3. Mettre les bon paramètres dans le fichier de configuration _configuration.json_ et le placer avec le script principal.
+3. Mettre les bons paramètres dans le fichier de configuration _configuration.json_ et le placer avec le script principal.
 
 Mise en place du chiffrement SSL :
 
@@ -124,13 +124,13 @@ Le serveur web est opérationnel, on y accède avec https://[IP].
 
 ## **VI - Exécution du script**
 
-Une fois toutes les étapes précedentes réalisées on peut passer à la partie éxecution du code.
+Une fois toutes les étapes précedentes réalisées on peut passer à la partie exécution du code.
 
 1. Choisir les bons paramètres dans le fichier _configuration.json_
 2. Exectuer le fichier _automatisation_crontab.sh_
 
-**L'utilitaire est maintenant opérationnel et s'éxecutera selon la période indiqué dans _configuration.json_**
+**L'utilitaire est maintenant opérationnel et s'exécutera selon la période indiqué dans _configuration.json_**
 
-**NB 1 :** Si vous changez la période dans le fichier configuration, il faut rééxecuter _automatisation_crontab.sh_.
+**NB 1 :** Si vous changez la période dans le fichier configuration, il faut réexécuter _automatisation_crontab.sh_.
 
-**NB 2 :** L'éxecution du fichier _automatisation_crontab.sh_ supprime toutes les tâches mise en place avec crontab. Si vous avez d'autres tâches à automatiser, il faut éxecuter _automatisation_crontab.sh_ en premier.
+**NB 2 :** L'exécution du fichier _automatisation_crontab.sh_ supprime toutes les tâches mise en place avec crontab. Si vous avez d'autres tâches à automatiser, il faut exécuter _automatisation_crontab.sh_ en premier.
